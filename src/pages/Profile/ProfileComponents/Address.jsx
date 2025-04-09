@@ -100,8 +100,8 @@ export default function Address() {
                     <label className='w-full my-3' >
                         <div className='font-semibold text-sm'> <span className='text-red-500 '>*</span> Phone</div>
 
-                        <div className='w-full my-2 flex items-center group active:border-green-500 hover:border-green-500 transi focus:border-green-500 outline-none rounded-lg border bg-white'>
-                            <div className='bg-[#FBFBFB] py-2 group-hover:border-r-green-500 transi rounded-l-lg px-3 border-r-2 font-semibold'>
+                        <div className='w-full my-2 flex items-center group active:border-green-500 hover:border-green-500 transition focus:border-green-500 outline-none rounded-lg border bg-white'>
+                            <div className='bg-[#FBFBFB] py-2 group-hover:border-r-green-500 transition rounded-l-lg px-3 border-r-2 font-semibold'>
                                 +998
                             </div>
                             <input className='w-full outline-none rounded-r-lg py-2 px-3 bg-white' placeholder='phone number' type="text" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)} required />

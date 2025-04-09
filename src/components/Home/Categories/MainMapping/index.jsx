@@ -40,7 +40,7 @@ export default function ({ currentPage, setCurrentPage }) {
       <div ref={topRef} className="flex justify-between items-center mb-10">
         <ul className="flex justify-start  items-center gap-5 font-semibold">
           {[{ label: "All Plants", value: "all-plants" }, { label: "New Arrivals", value: "new-arrivals" }, { label: "Sale", value: "sale" }].map(({ label, value }) => (
-            <li key={value} className={`cursor-pointer border-b ${selectedFilter === value ? "text-[#46A358] border-b-[#46A358]" : "hover:text-[#46A358] border-b-transparent"} transi`} onClick={() => { setSelectedFilter(value); setSearchParams({ category, sort, type: value, range_min: min, range_max: max }); }}>
+            <li key={value} className={`cursor-pointer border-b ${selectedFilter === value ? "text-[#46A358] border-b-[#46A358]" : "hover:text-[#46A358] border-b-transparent"} transition`} onClick={() => { setSelectedFilter(value); setSearchParams({ category, sort, type: value, range_min: min, range_max: max }); }}>
               {label}
             </li>
           ))}

@@ -54,7 +54,7 @@ export default function AboutProduct() {
     return (
         <>
             <div className='flex items-center gap-2 font-semibold text-[#42A358]/30 mt-5 mb-10'>
-                <Link to={-1} className="text-black/80 hover:text-[#42A358] hover:pr-2 transi ">Home</Link> / <Link to={`/shop`} className="text-black/80 hover:text-[#42A358] hover:pr-2 transi ">Shop</Link> / <p className="text-[#42A358]">{data?.title || 'product name'}</p>
+                <Link to={-1} className="text-black/80 hover:text-[#42A358] hover:pr-2 transition ">Home</Link> / <Link to={`/shop`} className="text-black/80 hover:text-[#42A358] hover:pr-2 transition ">Shop</Link> / <p className="text-[#42A358]">{data?.title || 'product name'}</p>
             </div>
             {isLoading ? (<AboutProductLoading />) : (
                 <div className="flex justify-between items-start gap-10">
@@ -62,7 +62,7 @@ export default function AboutProduct() {
                         <div>
                             {data?.detailed_images?.length > 0 && data.detailed_images.map((img, i) => {
                                 return (
-                                    <div key={i} onClick={() => setCurrentImg(img)} className=" w-[100px] h-[100px] mix-blend-multiply overflow-hidden border rounded group hover:border-[#42A358] transi my-2 bg-gray-50 ">
+                                    <div key={i} onClick={() => setCurrentImg(img)} className=" w-[100px] h-[100px] mix-blend-multiply overflow-hidden border rounded group hover:border-[#42A358] transition my-2 bg-gray-50 ">
                                         <img src={img} alt="flower" className="w-full h-full object-cover mix-blend-multiply" />
                                     </div>
                                 )
@@ -95,10 +95,10 @@ export default function AboutProduct() {
                         <div>
                             <h4 className='text-xl font-semibold text-black/80 my-3'>Size : </h4>
                             <div className='flex items-center gap-3'>
-                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transi hover:text-[#42A358] font-semibold flex justify-center items-center'>S</button>
-                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transi hover:text-[#42A358] font-semibold flex justify-center items-center'>M</button>
-                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transi hover:text-[#42A358] font-semibold flex justify-center items-center'>X</button>
-                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transi hover:text-[#42A358] font-semibold flex justify-center items-center'>XL</button>
+                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transition hover:text-[#42A358] font-semibold flex justify-center items-center'>S</button>
+                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transition hover:text-[#42A358] font-semibold flex justify-center items-center'>M</button>
+                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transition hover:text-[#42A358] font-semibold flex justify-center items-center'>X</button>
+                                <button className='border rounded-full w-8 h-8 hover:border-[#42A358] transition hover:text-[#42A358] font-semibold flex justify-center items-center'>XL</button>
                             </div>
                             <div className='flex items-center gap-3 my-3'>
                                 <button className='bg-[#45A538] font-light w-8 text-lg h-8 flex justify-center items-center text-white rounded-full'>-</button>
@@ -106,8 +106,8 @@ export default function AboutProduct() {
                                 <button className='bg-[#45A538] font-light w-8 text-lg h-8 flex justify-center items-center text-white rounded-full'>+</button>
                             </div>
                             <div className='flex items-center gap-3'>
-                                <button className='bg-[#42A538] text-white py-2 border-[#42A358] border px-5 text-lg font-semibold rounded hover:bg-[#42A358]/20 hover:text-black/80 uppercase transi'>Buy Now</button>
-                                <button className='bg-white text-black/80 border border-[#42A358] py-2 text-lg px-2 font-semibold rounded hover:bg-[#42A358]/20  uppercase transi'>Add to Cart</button>
+                                <button className='bg-[#42A538] text-white py-2 border-[#42A358] border px-5 text-lg font-semibold rounded hover:bg-[#42A358]/20 hover:text-black/80 uppercase transition'>Buy Now</button>
+                                <button className='bg-white text-black/80 border border-[#42A358] py-2 text-lg px-2 font-semibold rounded hover:bg-[#42A358]/20  uppercase transition'>Add to Cart</button>
                                 <button className='p-2 texl-lg border border-[#42A358] rounded font-thin' onClick={() => handleLike()}><Heart fill={isLiked ? "red" : "none"} className={`${isLiked && 'text-red-500'}`} /></button>
                             </div>
                             <div>
@@ -120,8 +120,8 @@ export default function AboutProduct() {
             )}
 
             <div className='flex items-center gap-5 w-full border-b-2 border-[#42A358]/40 mb-5 py-5 mt-10 text-lg'>
-                <h3 onClick={() => { setIsDesOpen(true); setIsRewOpen(false) }} className={`${isDesOpen && 'text-[#42A358]'} logo cursor-pointer transi`}>Product Description</h3>
-                <h3 onClick={() => { setIsDesOpen(false); setIsRewOpen(true) }} className={`${isRewOpen && 'text-[#42A358]'} logo cursor-pointer transi`}>Reviews (0)</h3>
+                <h3 onClick={() => { setIsDesOpen(true); setIsRewOpen(false) }} className={`${isDesOpen && 'text-[#42A358]'} logo cursor-pointer transition`}>Product Description</h3>
+                <h3 onClick={() => { setIsDesOpen(false); setIsRewOpen(true) }} className={`${isRewOpen && 'text-[#42A358]'} logo cursor-pointer transition`}>Reviews (0)</h3>
             </div>
             {isDesOpen && <div className='product-description' dangerouslySetInnerHTML={{ __html: data?.description }} />}
             {isRewOpen && <div>Reviews not available</div>}

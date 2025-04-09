@@ -43,7 +43,7 @@ export default function Navbar() {
         <ul className="flex gap-8 font-medium text-gray-700">
           {navLinks.map((link) => (
             <li key={link.path}>
-              <NavLink to={link.path} className={({ isActive }) => `py-[29px] border-b-2 transi hover:text-[#46A358] ${isActive ? "border-[#46A358] text-[#46A358]" : "border-transparent "}`}>
+              <NavLink to={link.path} className={({ isActive }) => `py-[29px] border-b-2 transition hover:text-[#46A358] ${isActive ? "border-[#46A358] text-[#46A358]" : "border-transparent "}`}>
                 {link.name}
               </NavLink>
             </li>

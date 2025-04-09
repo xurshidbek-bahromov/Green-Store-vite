@@ -66,7 +66,7 @@ export default function ProductCard({ data }) {
                     <img width={250} height={250} priority src={main_image} alt={name} className="w-full h-auto object-contain" />
                 </div>
                 <div className="flex max-sm:hidden justify-center items-center absolute w-full bottom-0 gap-0.5 opacity-0 group-hover:opacity-100 group-hover:gap-3 group-hover:bottom-2">
-                    <button onClick={handleCartClick} className={`p-2 hover:bg-gray-200 transi bg-white rounded cursor-pointer ${isInCart ? 'text-[#46A358]' : ''}`}>
+                    <button onClick={handleCartClick} className={`p-2 hover:bg-gray-200 transition bg-white rounded cursor-pointer ${isInCart ? 'text-[#46A358]' : ''}`}>
                         <ShoppingCart size={19} fill={isInCart ? "#46A358" : "none"} />
                     </button>
                     <button onClick={handleLike} className={`p-2 hover:bg-gray-200 bg-white rounded cursor-pointer ${isLiked ? 'text-red-500' : ''}`}>
@@ -76,11 +76,11 @@ export default function ProductCard({ data }) {
                         <Search size={19} />
                     </button>
                 </div>
-                <button onClick={handleLike} className={` sm:hidden absolute top-3 right-3 transi rounded cursor-pointer ${isLiked ? 'text-red-500' : ''}`}>
+                <button onClick={handleLike} className={` sm:hidden absolute top-3 right-3 transition rounded cursor-pointer ${isLiked ? 'text-red-500' : ''}`}>
                     <Heart size={19} fill={isLiked ? "red" : "none"} />
                 </button>
                 {isLiked && <div className={`absolute rounded-bl hidden group-hover:opacity-100 group-hover:-top-7 group-hover:-right-10 ${isInCart ? 'opacity-0' : 'opacity-100'} top-0 right-0 bg-[#46A358] text-white text-sm px-2 py-1 font-bold`}>In your Wishlist</div>}
-                {isInCart && <div className={`absolute opacity-100 hidden rounded-bl transi group-hover:opacity-0 group-hover:-top-7 group-hover:-right-10 top-0 right-0 bg-[#46A358] text-white text-sm px-2 py-1 font-bold`}>In your Cart</div>}
+                {isInCart && <div className={`absolute opacity-100 hidden rounded-bl transition group-hover:opacity-0 group-hover:-top-7 group-hover:-right-10 top-0 right-0 bg-[#46A358] text-white text-sm px-2 py-1 font-bold`}>In your Cart</div>}
             </div>
             <div className="flex justify-between items-center">
                 <div>
