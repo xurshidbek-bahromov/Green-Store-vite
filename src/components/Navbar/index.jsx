@@ -77,12 +77,7 @@ export default function Navbar() {
       <div className="max-w-[1280px] m-auto h-[2px] ">
         <hr className="bg-[#46a3597f] border-none w-full h-[2px]"></hr>
       </div>
-      <Modal className="" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
-        <div className="w-full my-4 flex justify-center items-center gap-3 text-xl font-semibold">
-          <button onClick={() => { setIsLoginOpen(true); setIsRegisterOpen(false); }} className={`${isLoginOpen ? "text-[#46A358]" : ""}`}>Login</button>
-          <div className="border-r-2 border-gray-300 h-4"></div>
-          <button onClick={() => { setIsLoginOpen(false); setIsRegisterOpen(true); }} className={`${!isLoginOpen ? "text-[#46A358]" : ""}`}>Register</button>
-        </div>
+      <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel} >
         <Auth isLoginOpen={isLoginOpen} isRegisterOpen={isRegisterOpen} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} setIsLogged={setIsLogged} />
       </Modal>
     </nav>

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { GoogleLoginButton, FacebookLoginButton } from 'react-social-login-buttons';
+import { signInWithGoogle } from '../../../../firebase';
 
 const api = import.meta.env.VITE_PUBLIC_GREENSHOP_API;
 const apikey = import.meta.env.VITE_PUBLIC_ACCESS_TOKEN;
@@ -61,6 +62,12 @@ function Login({ setIsModalOpen, setIsLogged }) {
       setIsLoading(false);
     }
   };
+
+  const signInWithPopupFc = async () => {
+    const result = await signInWithGoogle();
+    console.log(result);
+    axios.post(`${api}/user/sign-in/google?access_token-${apikey}`)
+  }
 
   return (
     <div className="max-w-lg mx-auto p-8 bg-gradient-to-br from-green-100 via-white to-green-50 rounded-lg shadow-md">
@@ -148,7 +155,7 @@ function Login({ setIsModalOpen, setIsLogged }) {
 
       <div className="grid grid-cols-2 gap-4">
         <GoogleLoginButton
-          onClick={() => {}}
+          onClick={signInWithPopupFc}
           className="!rounded-lg !py-2 !text-sm"
         />
         <FacebookLoginButton
